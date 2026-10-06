@@ -71,13 +71,15 @@ test('post product with only mandatory data should receive code 201', async ({ r
   //expect(responseBody.available).toBeFalsy()
 })
 
-test('post product with mandatory data and quantity should receive code 201', async ({ request }) => {
+test('post product with mandatory data and quantity should receive code 201', async ({
+  request,
+}) => {
   // prepare request body only mandatory fields
   const requestBody = {
     name: 'Kiwi',
     category: 'Fruit',
     price: 3.39,
-    quantity: 25,    //optional field is set explicitly
+    quantity: 25, //optional field is set explicitly
   }
   // Send a POST request to the server
   const response = await request.post('https://shop.tl-academy.ee/api/products', {
@@ -100,9 +102,7 @@ test('post product with mandatory data and quantity should receive code 201', as
   expect(responseBody.available).toBeTruthy()
 })
 
-test('post product with missing mandatory data should receive code 400', async ({
-  request,
-}) => {
+test('post product with missing mandatory data should receive code 400', async ({ request }) => {
   // prepare request body only mandatory fields
   const requestBody = {
     //name: 'Kiwi',
