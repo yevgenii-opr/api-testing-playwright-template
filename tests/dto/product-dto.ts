@@ -1,8 +1,8 @@
 export class ProductDto {
-  name: string;
-  category: string;
-  price: number;
-  quantity: number;
+  name: string
+  category: string
+  price: number
+  quantity: number
 
   constructor(name: string, category: string, price: number, quantity: number) {
     this.name = name

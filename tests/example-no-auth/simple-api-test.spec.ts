@@ -99,9 +99,7 @@ test('post product with mandatory data and quantity should receive code 201', as
   expect(responseBody.available).toBeTruthy()
 })
 
-test('fail to create product with invalid data should receive code 400', async ({
-  request,
-}) => {
+test('fail to create product with invalid data should receive code 400', async ({ request }) => {
   // prepare request body only mandatory fields
   const requestBody = new ProductDto('', 'Fruit', 0, 25)
 
@@ -118,7 +116,6 @@ test('fail to create product with invalid data should receive code 400', async (
   console.log('response body:', responseBody)
   expect(statusCode).toBe(StatusCodes.BAD_REQUEST)
 })
-
 
 test('post product with missing mandatory data should receive code 400', async ({ request }) => {
   // prepare request body only mandatory fields
